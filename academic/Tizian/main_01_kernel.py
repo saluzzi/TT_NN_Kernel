@@ -7,10 +7,12 @@ import time
 import numpy as np
 from scipy.stats import qmc
 
-from vkoga_2L import kernels
-from low_versus_high_rank.Tizian.utils import SGD_done_right
+from vkoga import kernels
 from sklearn.neural_network import MLPRegressor
 from datetime import datetime
+from matplotlib import pyplot as plt
+
+
 
 
 np.random.seed(0)
@@ -30,7 +32,6 @@ loss_rel = lambda y_true, y_pred: np.sqrt(np.linalg.norm(y_true - y_pred)**2 / n
 
 
 array_dim = np.arange(3, 16+1)
-# array_dim = np.arange(3, 5+1)
 
 dic_results = {}
 for method in list_methods:
@@ -120,14 +121,6 @@ for dim in array_dim:
 
 
 
-from matplotlib import pyplot as plt
-
-
-# check whether variable list_legend is defined
-try:
-    list_legend.append(name_method)
-except NameError:
-    list_legend = []
 
 
 plt.figure(5)
@@ -136,30 +129,7 @@ plt.plot(array_dim, dic_results['1L']['err_test'], 'x--')
 # plt.plot(array_dim, dic_results['NN']['err_test'], 'x--')
 plt.title('err_test')
 plt.yscale('log')
-plt.legend(list_legend)
 plt.xlabel('dim')
 plt.title(name_method)
 plt.show(block=False)
 
-
-# from matplotlib import pyplot as plt
-# import numpy as np
-
-# array_dim = np.array([ 3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16])
-# list_to_plot = [2.076804618434746e-05, 0.00017776878315597374, 0.00048791824809648205, 0.0019925183993045148, 0.00477994955953652, 0.011485151419467094, 0.02072287487044453, 0.034292352542609365, 0.057236650968846996, 0.07654083244509936, 0.1447941756809279, 0.15581610110893526, 0.20114200168123267, 0.19679899345898114]
-
-
-# plt.figure(6)
-# plt.clf()
-# plt.plot(array_dim, list_to_plot, 'x--')
-# # plt.plot(array_dim, dic_results['NN']['err_test'], 'x--')
-# plt.title('err_test')
-# plt.yscale('log')
-# plt.legend('Mat2, 1/2, 10k')
-# plt.xlabel('dim')
-# plt.title(['Mat2, 1/2, 10k'])
-# plt.show(block=False)
-
-
-# import tikzplotlib
-# tikzplotlib.save("accuracy_over_dimension.tex")
