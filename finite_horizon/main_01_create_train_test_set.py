@@ -1,5 +1,4 @@
-# Based on the google colab provided by Luca, we compute training and test data
-# to compute and evaluate our ML models
+# Create training and test data for the numerical experiments for Section 4.4.
 
 
 import numpy as np

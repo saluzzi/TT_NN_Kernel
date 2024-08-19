@@ -1,20 +1,21 @@
-# THIS IS A FINAL FILE FOR THE COMPUTATIONS WITHIN 4.4
+# Numerical experiments for Section 4.5 using kernel methods.
 
 
 
 import math
-import numpy as np
 import scipy
-import datetime
+import time
+import numpy as np
+import scipy.io
+
+from matplotlib import pyplot as plt
+from scipy.spatial import distance_matrix
+
+from Allen_Cahn.Tizian.utils import ValueFunction
 
 from vkoga import kernels
-from Allen_Cahn.Tizian.utils import ValueFunction
-from scipy.spatial import distance_matrix
-import time
-from matplotlib import pyplot as plt
 from vkoga_pde.kernels_PDE import Gaussian_laplace
 
-import scipy.io
 
 
 desired_width=400 # 320
@@ -25,8 +26,8 @@ flag_with_gradient = True
 
 
 ## Load dataset
-array_X = np.load('X_FINAL.npy')
-array_values = np.load('array_values_FINAL.npy').reshape(-1, 1)
+array_X = np.load('X.npy')
+array_values = np.load('array_values.npy').reshape(-1, 1)
 
 X_train = array_X
 y_train = array_values
@@ -36,7 +37,7 @@ y_train = array_values
 # General settings
 dim = 30
 
-# Kernel settings # TODO: Update me!
+# Kernel settings 
 shape_para = 1/np.sqrt(dim)
 reg_para = 1e-10
 

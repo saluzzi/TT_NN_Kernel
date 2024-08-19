@@ -1,4 +1,4 @@
-
+# Numerical experiments for Section 4.1 using kernel methods.
 
 
 import time

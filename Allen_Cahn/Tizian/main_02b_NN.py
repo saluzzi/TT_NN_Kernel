@@ -1,4 +1,4 @@
-# THIS IS A FINAL FILE FOR THE NN COMPUTATIONS WITHIN 4.4
+# Numerical experiments for Section 4.5 using NNs.
 
 
 
@@ -23,8 +23,8 @@ np.set_printoptions(linewidth=desired_width)
 
 
 ## Load dataset
-array_X = np.load('X_FINAL.npy')
-array_values = np.load('array_values_FINAL.npy').reshape(-1, 1)
+array_X = np.load('X.npy')
+array_values = np.load('array_values.npy').reshape(-1, 1)
 
 X_train = array_X
 y_train = array_values

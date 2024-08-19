@@ -1,4 +1,4 @@
-# asdf
+# Numerical experiments for Section 4.2 using NNs.
 
 
 # Some imports

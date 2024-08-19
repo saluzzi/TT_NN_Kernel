@@ -1,4 +1,4 @@
-# THIS IS A FINAL FILE FOR THE KERNEL COMPUTATIONS WITHIN 4.1 AND 4.2
+# Numerical experiments for Section 4.1 using NNs.
 
 
 import time

@@ -1,5 +1,4 @@
-# Based on the data created in main_01a_create_train_test_set.py, we will train a NN
-# model to approximate the data set.
+# Numerical experiments for Section 4.4 using NNs.
 
 import numpy as np
 

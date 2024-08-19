@@ -1,4 +1,4 @@
-# Final experiment to obtain the values within overleaf.
+# Numerical experiments for Section 4.2 using kernel methods.
 
 
 # Some imports
