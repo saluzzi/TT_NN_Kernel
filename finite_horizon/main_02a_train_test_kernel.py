@@ -2,17 +2,13 @@
 # model to approximate the data set.
 
 
-import math
 import numpy as np
-import scipy
-import datetime
-
-from vkoga_2L import kernels
+from vkoga import kernels
 from Allen_Cahn.Tizian.utils import ValueFunction
 from scipy.spatial import distance_matrix
 import time
 from matplotlib import pyplot as plt
-from vkoga_PDE.kernels_PDE import Gaussian_laplace
+from vkoga_pde.kernels_PDE import Gaussian_laplace
 
 
 desired_width=400 # 320
